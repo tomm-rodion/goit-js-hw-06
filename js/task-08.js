@@ -28,3 +28,26 @@ function onSubmit(evt) {
   console.log(data);
   evt.currentTarget.reset();
 }
+
+//#2
+
+const loginForm = document.querySelector(".login-form");
+const dataObjForm = {};
+
+function handerLoginForm(e) {
+  e.preventDefault();
+  const { email, password } = e.currentTarget.elements;
+
+  if (email.value === "" || password.value === "") {
+    alert("Заповніть будь ласка всі поля форми !!!");
+    return;
+  } else {
+    alert("дякую за реєстрацію!");
+  }
+  dataObjForm.email = email.value;
+  dataObjForm.password = password.value;
+  console.log(dataObjForm);
+  e.currentTarget.reset();
+}
+
+loginForm.addEventListener("submit", handerLoginForm);
