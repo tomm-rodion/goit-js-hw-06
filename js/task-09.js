@@ -16,3 +16,16 @@ function onBgColorBody(evt) {
   document.body.style.backgroundColor = getRandomHexColor();
   colorValue.textContent = document.body.style.backgroundColor;
 }
+
+//#2 refactoring code
+const elBody = document.querySelector("body");
+const btn = document.querySelector(".change-color");
+const elSpan = document.querySelector(".color");
+
+function clickNextColor() {
+  const randomColor = getRandomHexColor();
+  elBody.style.backgroundColor = randomColor;
+  elSpan.textContent = randomColor;
+}
+
+elBody.addEventListener("click", clickNextColor);

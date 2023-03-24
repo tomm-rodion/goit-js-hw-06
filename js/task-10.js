@@ -50,3 +50,37 @@ btnDestroy.addEventListener("click", destroyBoxes);
 //     amount * document.boxesShow.createElement("div");
 //   }
 // });
+
+//#2 ✅
+const Elinput = document.querySelector("input");
+const containerForColectionEl = document.querySelector("#boxes");
+const btnCreateElements = document.querySelector("button[data-create]");
+const btnCleenUpElements = document.querySelector("button[data-destroy]");
+
+function numberCreateBoxs(e) {
+  console.log(e.currentTarget.value);
+  createBoxes(e.currentTarget.value);
+  e.currentTarget.value = "";
+}
+Elinput.addEventListener("change", numberCreateBoxs);
+
+function createBoxes(amount) {
+  let number = 10;
+  const elements = [];
+
+  for (let i = 0; i < amount; i++) {
+    elements.push(
+      `<div class = "box-light" style = "background-color:${getRandomHexColor()}; width: ${(number += 20)}px; height: ${number}px;"></div>`
+    );
+  }
+
+  const DIVS = [...elements].join("");
+  console.log(DIVS);
+  containerForColectionEl.insertAdjacentHTML("beforeend", DIVS);
+}
+
+function onCleenBoxs() {
+  containerForColectionEl.innerHTML = "";
+}
+
+btnCleenUpElements.addEventListener("click", onCleenBoxs);
