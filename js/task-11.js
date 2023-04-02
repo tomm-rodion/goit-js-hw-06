@@ -41,3 +41,38 @@ function getRandomHexColor() {
     .toString(16)
     .padStart(6, 0)}`;
 }
+
+//#test search max number in [].
+
+const arrNumber = [3, 5, 67, 46, 34, 23, 67, 89, 34];
+
+let maxNumber = 0;
+for (const item of arrNumber) {
+  if (item > maxNumber) {
+    maxNumber = item;
+  }
+}
+
+console.log(maxNumber);
+
+//#2
+let maxNum = 0;
+
+arrNumber.map((item) => {
+  if (item > maxNum) {
+    maxNum = item;
+  }
+});
+
+console.log(maxNum);
+
+//#3
+let num = 0;
+
+arrNumber.forEach((item) => {
+  if (item > num) {
+    num = item;
+  }
+});
+
+console.log(num);
