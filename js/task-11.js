@@ -76,3 +76,19 @@ arrNumber.forEach((item) => {
 });
 
 console.log(num);
+
+//#4
+const arrey = [1, 5, 6, 7, 8, 9, 34, 45, 56, 67, 23, 24, 56, 45];
+let evenNumb = [];
+let notEvenNumb = [];
+
+arrey.map((item) => {
+  if (item % 2 === 0) {
+    evenNumb.push(item);
+  } else {
+    notEvenNumb.push(item);
+  }
+});
+
+console.log(evenNumb);
+console.log(notEvenNumb);
